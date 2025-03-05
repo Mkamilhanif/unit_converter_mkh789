@@ -1,12 +1,4 @@
 import streamlit as st
-import tkinter as tk
-
-root = tk.Tk()
-label= tk.Label(root,
-text="Created By Engr M.Kamil Hanif")
-label.pack(side=tk.BOTTOM)
-root.mainloop()
-
 
 def convert_units(value, from_unit, to_unit, conversion_type):
     conversion_factors = {
@@ -125,7 +117,7 @@ def convert_units(value, from_unit, to_unit, conversion_type):
 
     return None
 
-# Streamlit app
+
 def main():
     st.title("🍳 Unit Converter")
     
@@ -135,7 +127,7 @@ def main():
         ("Length", "Temperature", "Weight", "Volume", "Time", "Speed", "Area", "Pressure")
     )
 
-    # Define units for each conversion type
+    
     units = {
         "Length": ["meters", "km", "inches"],
         "Temperature": ["Celsius", "Fahrenheit"],
@@ -147,15 +139,15 @@ def main():
         "Pressure": ["atm", "Pa"]
     }
 
-    # Unit selection
+    
     units_list = units[conversion_type]
     from_unit = st.selectbox("From unit", units_list)
     to_unit = st.selectbox("To unit", units_list)
     
-    # Input value
+    
     value = st.number_input("Enter value", value=1.0)
 
-    # Perform conversion
+    
     if st.button("Click for Convert"):
         result = convert_units(value, from_unit, to_unit, conversion_type)
         if result is not None:
@@ -167,12 +159,12 @@ if __name__ == "__main__":
     main()
 
 
-# Your main content
+
 st.title("")
 
 st.write("Thank you❤")
 
-# Adding a footer at the bottom of the page
+
 footer = """
     <style>
     .footer {
